@@ -49,6 +49,13 @@ const ChipAutoComplete = () => {
         }
     };
 
+    const getHighlightedText = (text, highlight) => {
+        const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+        return <span>{parts.map((part, index) =>
+            part.toLowerCase() === highlight.toLowerCase() ? <b key={index} className="text-blue-600">{part}</b> : part
+        )}</span>;
+    };
+
     return (
         <div className="w-full max-w-lg mx-auto mt-8 p-4">
             <div className="flex flex-wrap">
@@ -75,7 +82,7 @@ const ChipAutoComplete = () => {
                             className="p-2 cursor-pointer hover:bg-gray-200"
                             onMouseDown={() => handleSuggestionClick(suggestion)}
                         >
-                            {suggestion}
+                            {getHighlightedText(suggestion, inputValue)}
                         </div>
                     ))}
                 </div>
