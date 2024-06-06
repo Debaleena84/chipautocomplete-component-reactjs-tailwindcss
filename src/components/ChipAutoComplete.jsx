@@ -26,6 +26,16 @@ const ChipAutoComplete = () => {
         }
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter' && inputValue) {
+            if (!chips.includes(inputValue) && suggestions.includes(inputValue)) {
+                setChips([...chips, inputValue]);
+                setInputValue('');
+                setSuggestions(suggestionsData.filter(suggestion => !chips.includes(suggestion)));
+            }
+        }
+    };
+
     return (
         <div className="w-full max-w-lg mx-auto mt-8 p-4">
             <input
@@ -33,6 +43,7 @@ const ChipAutoComplete = () => {
                 type="text"
                 value={inputValue}
                 onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
                 placeholder="Enter a tag..."
             />
         </div>
@@ -40,4 +51,5 @@ const ChipAutoComplete = () => {
 };
 
 export default ChipAutoComplete;
+
 
