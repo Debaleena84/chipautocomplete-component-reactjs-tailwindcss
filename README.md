@@ -1,0 +1,1 @@
+# chipautocomplete-hyresnap-assignment
