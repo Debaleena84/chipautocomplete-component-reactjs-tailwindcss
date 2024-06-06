@@ -1,3 +1,21 @@
+Intro:
+ChipAutoComplete Component
+This implementation is for a ChipAutoComplete component in React and TailwindCSS. A chip-like user-friendly element that can add, view, or remove chips with the autocomplete feature.
+
+Teck Stack:
+Html5
+CSS3
+React JS
+Learnings:
+React Functional components & their reusability.
+React file & folder structure.
+Fundamental CSS properties to master flex & grid.
+CSS BEM Model Fundamentals.
+Perfectly placed media queries for full responsiveness.
+
+
+
+
 ChipAutoComplete Component
 This implementation is for a ChipAutoComplete component in React and TailwindCSS. A chip-like user-friendly element that can add, view, or remove chips with the autocomplete feature.
 
