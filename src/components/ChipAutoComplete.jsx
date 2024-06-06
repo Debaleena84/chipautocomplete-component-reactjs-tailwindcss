@@ -41,6 +41,14 @@ const ChipAutoComplete = () => {
         setSuggestions(suggestionsData.filter(suggestion => !chips.includes(suggestion)));
     };
 
+    const handleSuggestionClick = (suggestion) => {
+        if (!chips.includes(suggestion)) {
+            setChips([...chips, suggestion]);
+            setInputValue('');
+            setSuggestions(suggestionsData.filter(sugg => sugg !== suggestion && !chips.includes(sugg)));
+        }
+    };
+
     return (
         <div className="w-full max-w-lg mx-auto mt-8 p-4">
             <div className="flex flex-wrap">
@@ -59,9 +67,21 @@ const ChipAutoComplete = () => {
                 onKeyDown={handleKeyDown}
                 placeholder="Enter a tag..."
             />
+            {inputValue && suggestions.length > 0 && (
+                <div className="border border-gray-300 rounded mt-2">
+                    {suggestions.map((suggestion, index) => (
+                        <div
+                            key={index}
+                            className="p-2 cursor-pointer hover:bg-gray-200"
+                            onMouseDown={() => handleSuggestionClick(suggestion)}
+                        >
+                            {suggestion}
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
 
 export default ChipAutoComplete;
-
