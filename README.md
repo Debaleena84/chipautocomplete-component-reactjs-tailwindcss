@@ -17,35 +17,44 @@
 <h3>Implementation:</h3>
 <ul>
   <li>Set up Component on Initialization</li>
-  <ul><li>Added basic structure of component ChipAutoComplete.</li></ul>
-  <li>React file & folder structure.</li>
-  <li>Fundamental CSS properties to master flex & grid.</li>
-  <li>CSS BEM Model Fundamentals.</li>
-  <li>Perfectly placed media queries for full responsiveness.</li>
+  <ul>
+    <li>Added basic structure of component ChipAutoComplete.</li>
+    <li>Initiated the inputValue, chips, and suggestions.</li>
+  </ul>
+  <li>State Management and Input Change Handler</li>
+  <ul>
+    <li>Added handleInputChange to manage input changes and filter suggestions according to the change in input.</li>
+  </ul>
+  <li>Chip Creation on Enter Key</li>
+  <ul>
+    <li>Added handleKeyDown to create a chip when the Enter key is hit without adding duplicates.</li>
+  </ul>
+  <li>Chip Loading and Unloading</li>
+  <ul>
+    <li>The chips were displayed, and they could be removed by clicking the cross icon.</li>
+  </ul>
+  <li>Suggestions Dropdown and Click Handler</li>
+  <ul>
+    <li>Used a drop-down to view suggestions and applied a click handler so that on the click of a suggestion, the same would be added as a chip.</li>
+  </ul>
+  <li>Highlight Matching Text in Suggestions</li>
+  <ul>
+    <li>Added getHighlightedText to highlight the substring of the suggestion that is matched by the input.</li>
+  </ul>
+  <li>Keyboard Navigation</li>
+  <ul>
+    <li>Added keyboard navigation to the suggestions list, made available via arrow keys.</li>
+  </ul>
+  <li>Clear All Chips Button</li>
+  <ul>
+    <li>Added a 'Clear All' button to allow the user to clear all the chips in one action.</li>
+  </ul>
+  <li>Mobile Responsiveness</li>
+  <ul>
+    <li>Ensured the component responds up to 400px using TailwindCSS.</li>
+  </ul>
+  <li>Transition Animations</li>
+  <ul>
+    <li>Added a few smooth transitions and animations for the chip components to make the user experience just that much better.</li>
+  </ul>
 </ul>
-
-
-
-
-Implementation
-Set up Component on Initialization
-Added basic structure of component ChipAutoComplete.
-Initiated the inputValue, chips, and suggestions.
-State Management and Input Change Handler
-Added handleInputChange to manage input changes and filter suggestions according to the change in input.
-Chip Creation on Enter Key
-Added handleKeyDown to create a chip when the Enter key is hit without adding duplicates.
-Chip Loading and Unloading
-The chips were displayed, and they could be removed by clicking the cross icon.
-Suggestions Dropdown and Click Handler
-Used a drop-down to view suggestions and applied a click handler so that on the click of a suggestion, the same would be added as a chip.
-Highlight Matching Text in Suggestions
-Added getHighlightedText to highlight the substring of the suggestion that is matched by the input.
-Keyboard Navigation
-Added keyboard navigation to the suggestions list, made available via arrow keys.
-Clear All Chips Button
-Added a 'Clear All' button to allow the user to clear all the chips in one action.
-Mobile Responsiveness
-Ensured the component responds up to 400px using TailwindCSS.
-Transition Animations
-Added a few smooth transitions and animations for the chip components to make the user experience just that much better.
