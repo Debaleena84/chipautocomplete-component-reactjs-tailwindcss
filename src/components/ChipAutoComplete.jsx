@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const suggestionsData = [
     'React', 'Hands On', 'Live Coding', 'Angular', 'Vue JS', 'JS Fundamentals', 
@@ -12,11 +12,32 @@ const ChipAutoComplete = () => {
     const [chips, setChips] = useState([]);
     const [suggestions, setSuggestions] = useState(suggestionsData);
 
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        setInputValue(value);
+
+        if (value) {
+            const filteredSuggestions = suggestionsData.filter(suggestion =>
+                suggestion.toLowerCase().includes(value.toLowerCase()) && !chips.includes(suggestion)
+            );
+            setSuggestions(filteredSuggestions);
+        } else {
+            setSuggestions(suggestionsData.filter(suggestion => !chips.includes(suggestion)));
+        }
+    };
+
     return (
         <div className="w-full max-w-lg mx-auto mt-8 p-4">
-            {/* Component structure */}
+            <input
+                className="w-full p-2 border border-gray-300 rounded mt-2"
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                placeholder="Enter a tag..."
+            />
         </div>
     );
 };
 
 export default ChipAutoComplete;
+
