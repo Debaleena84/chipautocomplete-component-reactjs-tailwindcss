@@ -36,8 +36,21 @@ const ChipAutoComplete = () => {
         }
     };
 
+    const handleRemoveChip = (chip) => {
+        setChips(chips.filter(c => c !== chip));
+        setSuggestions(suggestionsData.filter(suggestion => !chips.includes(suggestion)));
+    };
+
     return (
         <div className="w-full max-w-lg mx-auto mt-8 p-4">
+            <div className="flex flex-wrap">
+                {chips.map((chip, index) => (
+                    <div key={index} className="m-1 flex items-center bg-blue-200 rounded-full px-2 py-1 text-sm">
+                        {chip}
+                        <button className="ml-2 text-blue-600" onClick={() => handleRemoveChip(chip)}>×</button>
+                    </div>
+                ))}
+            </div>
             <input
                 className="w-full p-2 border border-gray-300 rounded mt-2"
                 type="text"
@@ -51,5 +64,4 @@ const ChipAutoComplete = () => {
 };
 
 export default ChipAutoComplete;
-
 
